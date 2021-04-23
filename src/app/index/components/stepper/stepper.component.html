@@ -1,0 +1,21 @@
+<div class="__stepper">
+  <button
+    nz-button
+    nzType="default"
+    [nzSize]="'default'"
+    (click)="reduceQtyItem()"
+  >
+    <i nz-icon nzType="minus" nzTheme="outline"></i>
+  </button>
+
+  <p class="my-auto mx-3">{{ itemOnCart.quantity }}</p>
+
+  <button
+    nz-button
+    nzType="default"
+    [nzSize]="'default'"
+    (click)="sumQtyItem()"
+  >
+    <i nz-icon nzType="plus" nzTheme="outline"></i>
+  </button>
+</div>

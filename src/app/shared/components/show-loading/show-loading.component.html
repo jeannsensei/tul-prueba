@@ -1,0 +1,31 @@
+<div class="row animate__animated animate__fadeIn" *ngIf="option === 1">
+  <div class="{{ class }}" *ngFor="let item of array">
+    <div class="border rounded p-3">
+      <div class="loading-placeholder width-400 my-1">
+        <div class="loading-animated-background height-10"></div>
+      </div>
+      <div class="loading-placeholder width-150 my-1">
+        <div class="loading-animated-background height-10"></div>
+      </div>
+      <div class="loading-placeholder width-250 my-1">
+        <div class="loading-animated-background height-10"></div>
+      </div>
+      <div class="loading-placeholder width-100 my-1">
+        <div class="loading-animated-background height-10"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row animate__animated animate__fadeIn" *ngIf="option === 2">
+  <div class="{{ class }}" *ngFor="let item of array">
+    <div class="border rounded p-3">
+      <div class="loading-placeholder width-400 my-1">
+        <div class="loading-animated-background height-10"></div>
+      </div>
+      <div class="loading-placeholder width-150 my-1">
+        <div class="loading-animated-background height-10"></div>
+      </div>
+    </div>
+  </div>
+</div>

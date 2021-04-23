@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3">
+      <h1 nz-typography>
+        <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+        Productos
+      </h1>
+    </div>
+    <div class="col-md-6 mb-3" *ngFor="let item of items | async">
+      <nz-card>
+        <div class="row">
+          <div class="col-12">
+            <!-- INFO DEL PRODUCTO -->
+            <div class="row">
+              <div class="col-12 my-auto">
+                <h4 class="mb-0" nz-typography>
+                  {{ item.nombre | titlecase }}
+                </h4>
+              </div>
+              <div class="col-12">
+                <p nz-typography>{{ item.descripcion | titlecase }}</p>
+              </div>
+              <div class="col-12">
+                <span nz-typography>{{ item.sku }}</span>
+              </div>
+            </div>
+            <!-- // INFO DEL PRODUCTO -->
+          </div>
+          <div class="col-12 d-flex justify-content-end">
+            <button nz-button nzType="primary" (click)="addItemToCart(item)">
+              <i nz-icon nzType="shopping-cart" nzTheme="outline"></i> Añadir al
+              carrito
+            </button>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<nz-layout class="layout">
+  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item routerLink="products">
+        <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+        <span>Productos</span>
+      </li>
+      <li nz-menu-item routerLink="cart">
+        <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+        <span>Carrito</span>
+      </li>
+
+      <li
+        nz-menu-item
+        nzMatchRouter
+        nz-popconfirm
+        [nzIcon]="''"
+        [nzOkText]="'Cerrar sesión'"
+        nzPopconfirmTitle="¿Desea cerrar sesión?"
+        (nzOnConfirm)="userSignOut()"
+        nzPopconfirmPlacement="right"
+      >
+        <i nz-icon nzType="logout" nzTheme="outline"></i>
+        Cerrar sesión
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-content>
+      <!-- <div class="inner-content">Content</div> -->
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>TUL Prueba</nz-footer>
+  </nz-layout>
+</nz-layout>

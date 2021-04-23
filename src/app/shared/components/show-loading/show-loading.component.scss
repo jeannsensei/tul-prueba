@@ -1,0 +1,55 @@
+/* LOADING PLACEHOLDE */
+.loading-placeholder {
+  /* margin: 0 auto; */
+  max-width: 400px;
+  max-height: 50px;
+  background-color: #eee;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.loading-animated-background {
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: darkgray;
+  background: linear-gradient(to right, #eeeeee 10%, #dddddd 18%, #eeeeee 33%);
+  background-size: 800px 104px;
+  position: relative;
+}
+
+.height-10 {
+  height: 10px;
+}
+
+.height-25 {
+  height: 25px;
+}
+
+.width-100 {
+  max-width: 100px;
+}
+
+.width-150 {
+  max-width: 150px;
+}
+
+.width-250 {
+  max-width: 250px;
+}
+
+.width-400 {
+  max-width: 400px;
+}
+
+/* // LOADING PLACEHOLDER */

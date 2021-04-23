@@ -1,0 +1,31 @@
+<div class="file-drop-area">
+  <div class="d-flex justify-content-center">
+    <span class="ant-upload-drag-icon"
+      ><i nz-icon nzType="inbox"></i> Elegir archivo (
+      {{ fileTypesMessageOnError }} )</span
+    >
+  </div>
+  <div class="d-flex justify-content-center">
+    <span class="ant-upload-text">{{
+      file ? file.name : "o arrastra el archivo aquí"
+    }}</span>
+  </div>
+  <div class="d-flex justify-content-center">
+    <span class="ant-upload-hint">Tamaño máximo: 3MB</span>
+  </div>
+
+  <input
+    [disabled]="isDisabled"
+    class="file-input"
+    type="file"
+    [accept]="fileTypesAcceptedHTML"
+  />
+</div>
+
+<!-- <p class="ant-upload-drag-icon">
+  <i nz-icon nzType="inbox"></i>
+</p>
+<p class="ant-upload-text">Arrastra los archivos o da clic aquí</p>
+<p class="ant-upload-hint">
+  Sube aquí los archivos necesarios para analizar la tarea.
+</p> -->

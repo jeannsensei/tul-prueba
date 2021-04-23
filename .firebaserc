@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tul-prueba-f1005": {
+      "hosting": {
+        "tul-prueba": [
+          "tul-prueba-f1005"
+        ]
+      }
+    }
+  }
+}

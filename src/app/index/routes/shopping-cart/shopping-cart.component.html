@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3">
+      <h1 nz-typography>
+        <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+        Carrito de compras
+      </h1>
+    </div>
+    <div
+      class="d-flex justify-content-center w-100"
+      *ngIf="(items | async)?.length == 0"
+    >
+      <nz-empty
+        nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+        [nzNotFoundContent]="contentTpl"
+        [nzNotFoundFooter]="footerTpl"
+      >
+        <ng-template #contentTpl> No hay productos en tu carrito </ng-template>
+        <ng-template #footerTpl>
+          <button nz-button nzType="dashed" routerLink="/home/products">
+            <i nz-icon nzType="gift" nzTheme="outline"></i> Ver los productos
+          </button>
+        </ng-template>
+      </nz-empty>
+    </div>
+    <div class="col-12 mb-3" *ngFor="let item of items | async">
+      <nz-card>
+        <div class="row">
+          <div class="col-md-4 my-auto">
+            <h5 class="mb-0" nz-typography>{{ item.nombre | titlecase }}</h5>
+          </div>
+          <div class="col-md-2 my-auto">
+            <span nz-typography>{{ item.sku }}</span>
+          </div>
+          <div class="col-md-4 my-auto">
+            <app-stepper [itemOnCart]="item"></app-stepper>
+          </div>
+          <div class="col-md-2 d-flex justify-content-end">
+            <button
+              nz-button
+              nzType="dashed"
+              class="mx-3"
+              (click)="removeItemFromCart(item.id)"
+              nzTooltipTitle="Eliminar del carrito"
+              nz-tooltip
+              nzDanger
+            >
+              <i nz-icon nzType="delete" nzTheme="outline"></i>
+            </button>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>
+
+<div
+  class="d-flex justify-content-center"
+  *ngIf="(items | async)?.length !== 0"
+>
+  <button nz-button nzType="primary" class="mx-3" (click)="createOrder()">
+    <i nz-icon nzType="thunderbolt" nzTheme="outline"></i> Crear orden
+  </button>
+</div>
